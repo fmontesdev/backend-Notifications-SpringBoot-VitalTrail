@@ -1,6 +1,6 @@
-package com.springboot.resend.api.exception;
+package com.springboot.notification.api.exception;
 
-import com.springboot.resend.domain.exception.NotificationException;
+import com.springboot.notification.domain.exception.NotificationException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

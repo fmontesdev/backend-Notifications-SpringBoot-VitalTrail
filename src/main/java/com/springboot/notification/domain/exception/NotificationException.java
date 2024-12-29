@@ -1,4 +1,4 @@
-package com.springboot.resend.domain.exception;
+package com.springboot.notification.domain.exception;
 
 import lombok.Getter;
 

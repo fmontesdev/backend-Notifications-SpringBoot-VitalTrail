@@ -1,4 +1,4 @@
-package com.springboot.resend.api.exception;
+package com.springboot.notification.api.exception;
 
 import lombok.Getter;
 
