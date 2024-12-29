@@ -1,10 +1,10 @@
-package com.springboot.resend;
+package com.springboot.notification;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ResendApplicationTests {
+class NotificationApplicationTests {
 
 	@Test
 	void contextLoads() {

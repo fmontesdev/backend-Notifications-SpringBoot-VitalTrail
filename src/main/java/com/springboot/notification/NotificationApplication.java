@@ -1,13 +1,11 @@
-package com.springboot.resend;
+package com.springboot.notification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ResendApplication {
-
+public class NotificationApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ResendApplication.class, args);
+		SpringApplication.run(NotificationApplication.class, args);
 	}
-
 }
