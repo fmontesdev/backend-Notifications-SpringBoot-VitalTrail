@@ -16,11 +16,6 @@ public class NotificationController {
 
     @PostMapping("/email")
     public ResponseEntity<Map<String, String>> sendMailgunEmail(@RequestBody NotificationDto.MailgunEmail notification) {
-        return mailgunEmailService.sendMailgunEmail(
-            notification.getTo(),
-            notification.getSubject(),
-            notification.getType_user(),
-            notification.getData_inscription()
-        );
+        return mailgunEmailService.sendMailgunEmail(notification);
     }
 }

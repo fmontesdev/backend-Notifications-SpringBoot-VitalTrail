@@ -1,5 +1,6 @@
 package com.springboot.notification.domain.notification;
 
+import com.springboot.notification.api.notification.NotificationDto;
 import com.mailgun.api.v3.MailgunMessagesApi;
 import com.mailgun.model.message.Message;
 import com.mailgun.model.message.MessageResponse;
@@ -22,13 +23,14 @@ public class MailgunEmailServiceImpl implements MailgunEmailService {
     private final String domain;
     private final SpringTemplateEngine templateEngine;
 
-    public ResponseEntity<Map<String, String>> sendMailgunEmail(String to, String subject, String type_user, Map<String, Object> data_inscription) {
-        String htmlContent = getEmailTemplate(type_user, data_inscription);
+    @Override
+    public ResponseEntity<Map<String, String>> sendMailgunEmail(NotificationDto.MailgunEmail notification) {
+        String htmlContent = getEmailTemplate(notification.getType_user(), notification.getData_inscription());
         
         Message message = Message.builder()
                 .from("EntrénaMe <entrename@" + domain + ">")
-                .to(to)
-                .subject(subject)
+                .to(notification.getTo())
+                .subject(notification.getSubject())
                 .html(htmlContent)
                 .build();
         try {
