@@ -25,10 +25,10 @@ public class MailgunEmailServiceImpl implements MailgunEmailService {
 
     @Override
     public ResponseEntity<Map<String, String>> sendMailgunEmail(NotificationDto.MailgunEmail notification) {
-        String htmlContent = getEmailTemplate(notification.getType_user(), notification.getData_inscription());
+        String htmlContent = getEmailTemplate(notification.getTemplate(), notification.getDataSubscription());
         
         Message message = Message.builder()
-                .from("EntrénaMe <entrename@" + domain + ">")
+                .from("VitalTrail <vitaltrail@" + domain + ">")
                 .to(notification.getTo())
                 .subject(notification.getSubject())
                 .html(htmlContent)
@@ -57,19 +57,10 @@ public class MailgunEmailServiceImpl implements MailgunEmailService {
         }
     }
 
-    private String getEmailTemplate(String type_user, Map<String, Object> data_inscription) {
+    private String getEmailTemplate(String template, Map<String, Object> data) {
         Context context = new Context();
-        context.setVariables(data_inscription);
+        context.setVariables(data);
 
-        switch (type_user.toLowerCase()) {
-            case "client":
-                return templateEngine.process("client-email", context);
-            case "admin":
-                return templateEngine.process("admin-email", context);
-            case "instructor":
-                return templateEngine.process("instructor-email", context);
-            default:
-                throw new NotificationException(Error.INVALID_REQUEST);
-        }
+        return templateEngine.process(template.toLowerCase(), context);
     }
 }

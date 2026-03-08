@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación suscripción VitalTrail</title>
+</head>
+<body>
+    <p>Hola [[${name}]],</p>
+    <br>
+        Te damos la bienvenida a nuestro servicio premium de VitalTrail</br>
+        Te confirmamos tu suscripción:
+    </p>
+    <p>
+        Número de suscripción: <strong>[[${subscriptionId}]]</strong><br>
+        Plan: <strong>[[${productName}]]</strong><br>
+        Nombre de usuario: <strong>[[${name}]] [[${surname}]]</strong><br>
+        Precio: <strong>[[${priceAmount}]]</strong><br>
+        Fecha de inicio: <strong>[[${currentPeriodStart}]]</strong><br>
+        Próximo pago: <strong>[[${currentPeriodEnd}]]</strong><br>
+        Estado: <strong>[[${status}]]</strong><br>
+        Forma de pago: <strong>[[${paymentMethodType}]] [[${cardBrand}]]</strong><br>
+        Últimos dígitos de tarjeta: <strong>[[${cardLast4}]]</strong><br>
+        Fecha de caducidad de tarjeta: <strong>[[${cardExpMonth}]]/[[${cardExpYear}]]</strong>
+    </p>
+    <p>
+        Atentamente,<br>
+        VitalTrail
+    </p>
+</body>
+</html>
